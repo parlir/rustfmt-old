@@ -5,7 +5,7 @@
     (revert-buffer :ignore-auto :noconfirm))
 
 (defun rustfmt-file ()
-  "Sync org file to Raspberry Pi with external script."
+  "Auto run rustfmt on file if in rust mode after save."
   (when (eq major-mode 'rust-mode)
     (shell-command-to-string (format "rustfmt %s --force" buffer-file-name))
 		(revert-buffer-no-confirm)
